@@ -14,6 +14,7 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
 
 
+
 // IMPROVIMENTS I NEED TO WORK ON FOR MOBILE
 // i need to make the hero section uniform in the mobile screen like the portfolios that i saw, i need to make sure only my name the nav and teck stack get shown in every screen hight size
 // improve the links style and position inside the dialog drawer
@@ -39,11 +40,14 @@ function App() {
     }
   },[open])
 
+  // nav height is defined here to keep a proper size in hero section when nav moves together with the scroll
+  const navHeight = "20"
+
 
   return (
     <>
-    <header className="min-h-[100vh] flex flex-col justify-between">
-      <nav className="px-8 h-20 flex max-sm:justify-end max-sm:items-center sticky top-0 border1">
+    <header className="max-sm:min-h-[100vh] flex flex-col justify-between">
+      <nav className={`px-2 h-${navHeight} w-full flex max-sm:justify-end max-sm:items-center bg-white fixed top-0`}>
         {navList.map((links) => (
           <a 
           href="/"
@@ -52,10 +56,10 @@ function App() {
           >{links}</a>
         ))}
           <Dialog.Root open={open} onOpenChange={setOpen}>
-            <Dialog.Trigger asChild>
-              <button className="sm:hidden text-5xl rounded-xl grid place-content-center opacity-90"
+            <Dialog.Trigger asChild className="bg-white">
+              <button className="sm:hidden text-5xl rounded-md grid place-content-center opacity-90 mr-[2vw]"
               >
-                <HiOutlineMenuAlt4/>
+                <HiOutlineMenuAlt4 className="text-neutral-700"/>
               </button>
             </Dialog.Trigger>
             
@@ -133,14 +137,18 @@ function App() {
           </Dialog.Root>
       </nav>
 
-      <section className="h-[50vh] w-full bg-neutral-100">
-          <div className="w-full h-full flex flex-col items-center justify-center">
+      <div className={`sm:hidden w-full h-${navHeight}`}>
+        {/* navUnderlayer */}
+      </div>
+
+      <section className="h-[50vh] max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center">
+          <div className="w-full flex flex-col items-center justify-center">
             <h1 className="text-5xl font-semibold">Victor Souza</h1>
             <h2 className="text-3xl">Front-End Developer</h2>
           </div>
       </section >
 
-      <section>
+      <section className="mb-2">
           <h2 className="text-center text-2xl font-medium mt-12 mb-4">Teck Stack</h2>
           <div className="grid grid-cols-5 gap-4 justify-items-center px-3">
             {techStack.map((tech) => (
@@ -212,7 +220,7 @@ function App() {
               name="message"
               id="message"
               placeholder="Message"
-              className="max-sm:max-w-[90vw] max-sm:max-h-[12vh] text-lg outline-none resize-none borderFormFilds bg-transparent mt-4"
+              className="max-sm:max-w-[90vw] max-sm:h-[16vh] text-lg outline-none resize-none borderFormFilds bg-transparent mt-4"
               ></textarea>
               <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4">Send</button>
           </form>
