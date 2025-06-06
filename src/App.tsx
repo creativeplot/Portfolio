@@ -181,25 +181,42 @@ function App() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center">
+        <section className="flex flex-col items-center bg-neutral-100 pb-12">
           <h2 className="text-2xl font-semibold  max-sm:mt-16 max-sm:mb-4">Contact Form</h2>
-          <form className="h-[60vh] w-[90vw] rounded-md">
+          <form className="w-[80vw] rounded-md flex flex-col gap-4">
             <input 
               type="text"
               placeholder="Name"
-              className="border1 w-full rounded-md h-12 text-lg indent-4 borderFormFilds"
+              className="w-full h-12 text-lg borderFormFilds bg-transparent outline-none"
               />
               <input 
               type="email"
               placeholder="Email"
-              className="w-full h-12 text-lg indent-4 borderFormFilds"
+              className="w-full h-12 text-lg borderFormFilds bg-transparent outline-none"
               />
+              <textarea
+              name="message"
+              id="message"
+              placeholder="Message"
+              className="max-sm:max-w-[90vw] max-sm:max-h-[12vh] text-lg outline-none resize-none borderFormFilds bg-transparent mt-4"
+              ></textarea>
+              <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4">Send</button>
           </form>
+
+          <div className="w-full max-sm:max-w-[80vw] mt-20 flex flex-col gap-4">
+            <h3 className="text-xl font-semibold">Quick Contact</h3>
+            <p>
+              <span className="font-semibold">Email:</span> Hey@example.com</p>
+            <p>
+              <span>Social:</span> linkding twitter</p>
+          </div>
         </section>
       </div>
 
     </main>
-    <footer></footer>
+    <footer className="h-20 flex justify-center items-center text-xs">
+      <p>&copy; 2025 VICTORSOUZA. ALL RIGHT RESERVED</p>
+    </footer>
     </>
   )
 }
