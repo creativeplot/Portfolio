@@ -7,6 +7,12 @@ import { motion, AnimatePresence } from "motion/react"
 import { RiCloseLargeFill } from "react-icons/ri";
 import laptop from "./assets/laptopColorful.png"
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+
+
 
 
 
@@ -16,12 +22,11 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 
 
 // IMPROVIMENTS I NEED TO WORK ON FOR MOBILE
-// i need to make the hero section uniform in the mobile screen like the portfolios that i saw, i need to make sure only my name the nav and teck stack get shown in every screen hight size
 // improve the links style and position inside the dialog drawer
 // add social media icons, i think it is best to choose from the internet
 // improve the projects section, improve name and project descriptions
 // add background colors for some sections
-// make the nav bar follow the scroll
+// ajust the navBar background so it doesnt get transparent in some sections
 
 
 function App() {
@@ -41,7 +46,7 @@ function App() {
   },[open])
 
   // nav height is defined here to keep a proper size in hero section when nav moves together with the scroll
-  const navHeight = "20"
+  const navHeight = "16"
 
 
   return (
@@ -78,17 +83,20 @@ function App() {
 
                   <Dialog.Content asChild>
                     <motion.div
-                    className="fixed top-0  left-0 bg-white rounded shadow-2xl h-full"
+                    className="fixed top-0 left-0 bg-white rounded shadow-2xl h-full"
                     initial={{
                       width: '0vw',
+                      paddingLeft: '0',
                       opacity: 0
                     }}
                     animate={{
                       width: '60vw',
+                      paddingLeft: '20px',
                       opacity: 1
                     }}
                     exit={{
                       width: '0vw',
+                      paddingLeft: '0px',
                       opacity: 0
                     }}
                     transition={{duration: 0.2, ease: 'easeInOut'}}
@@ -101,7 +109,23 @@ function App() {
                       </Dialog.Close>
                     </div>
 
-                    <div className="mt-16 flex flex-col gap-4 items-center">
+                    <motion.div
+                    initial={{
+                      opacity: 0
+                    }}
+                    animate={{
+                      opacity: 1,
+                      transition: {
+                        duration: 0.4
+                      }
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        duration: 0.05
+                      }
+                    }}
+                    className="mt-8 flex flex-col gap-8">
                       {navList.map((link) => (
                         <a 
                         href="/" 
@@ -109,18 +133,35 @@ function App() {
                         className=""
                         >{link}</a>
                       ))}
-                    </div>
+                    </motion.div>
 
-                    <div className="mt-8 flex gap-4 justify-center">
-                      {socialMedia.map((icon) => (
-                        <a 
-                        href="/" 
-                        key={icon.name}
-                        className="">
-                          {icon.name}
-                        </a>
-                      ))}
-                    </div>
+                    <motion.div
+                    initial={{
+                      opacity: 0
+                    }}
+                    animate={{
+                      opacity: 1,
+                      transition: {
+                        duration: 0.4
+                      }
+                    }}
+                    exit={{
+                      opacity: 0,
+                      transition: {
+                        duration: 0.05
+                      }
+                    }}
+                    className="mt-12 flex gap-8 text-3xl">
+                      <a href="/">
+                      <FaGithub/>
+                      </a>
+                      <a href="/">
+                      <FaLinkedin/>
+                      </a>
+                      <a href="/">
+                      <BsTwitterX/>
+                      </a>
+                    </motion.div>
 
                     <Dialog.Title></Dialog.Title>
                     <Dialog.Description></Dialog.Description>
@@ -137,11 +178,11 @@ function App() {
           </Dialog.Root>
       </nav>
 
-      <div className={`sm:hidden w-full h-${navHeight}`}>
+      <div className={`w-full h-${navHeight}`}>
         {/* navUnderlayer */}
       </div>
 
-      <section className="h-[50vh] max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center">
+      <section className="max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center">
           <div className="w-full flex flex-col items-center justify-center">
             <h1 className="text-5xl font-semibold">Victor Souza</h1>
             <h2 className="text-3xl">Front-End Developer</h2>
@@ -149,7 +190,7 @@ function App() {
       </section >
 
       <section className="mb-2">
-          <h2 className="text-center text-2xl font-medium mt-12 mb-4">Teck Stack</h2>
+          <h2 className="text-center text-2xl font-medium mt-20 mb-4">Teck Stack</h2>
           <div className="grid grid-cols-5 gap-4 justify-items-center px-3">
             {techStack.map((tech) => (
               <figure key={tech.name} className="border1 w-16 h-16 p-1 rounded-md bg-neutral-200">
@@ -168,7 +209,7 @@ function App() {
 
     <main>
 
-      <div className="max-sm:mt-16">
+      <div className="max-sm:mt-20">
         <figure>
           <img 
           src={laptop}
@@ -177,17 +218,17 @@ function App() {
         </figure>
 
         <div>
-          <h2 className="text-center text-2xl font-medium mb-2">About</h2>
-          <p className="text-xl px-4 leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.</p>
+          <h2 className="text-center text-2xl font-medium mb-2">About/Journey</h2>
+          <p className="text-xl px-4 leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc</p>
         </div>
 
-        <section className="max-sm:flex max-sm:flex-col max-sm:items-center gap-4">
-          <h2 className="text-2xl font-medium  max-sm:mt-16">Projects</h2>
-          <div className="border1 flex flex-col items-center gap-4">
+        <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-20 gap-4">
+          <h2 className="text-2xl font-medium">Projects</h2>
+          <div className="flex flex-col items-center gap-4">
             <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md bg-neutral-400">
             </figure>
             <h3 className="text-xl font-medium text-center">Simple Painting</h3>
-            <p className="text-center">Simple Painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+            <p className="text-center max-sm:max-w-[90vw]">Simple Painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
 
             <div className="flex gap-4">
               <p>Tools</p>
@@ -203,9 +244,9 @@ function App() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center pb-12">
-          <h2 className="text-2xl font-semibold  max-sm:mt-16 max-sm:mb-4">Contact Form</h2>
-          <form className="w-[80vw] rounded-md flex flex-col gap-4">
+        <section className="flex flex-col items-center pb-12 mt-40">
+          <h2 className="text-2xl font-semibold max-sm:mb-4">Contact Form</h2>
+          <form className="w-[90vw] rounded-md flex flex-col gap-4">
             <input 
               type="text"
               placeholder="Name"
@@ -225,7 +266,7 @@ function App() {
               <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4">Send</button>
           </form>
 
-          <div className="w-full max-sm:max-w-[80vw] mt-20 flex flex-col gap-4">
+          <div className="w-full max-sm:max-w-[90vw] mt-20 flex flex-col gap-4">
             <h3 className="text-xl font-semibold">Quick Contact</h3>
             <p>
               <span className="font-semibold">Email:</span> Hey@example.com</p>
