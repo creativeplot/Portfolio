@@ -2,11 +2,25 @@ import { useEffect, useState} from "react";
 import { navList } from "./data-constants/data-constants"
 import { socialMedia } from "./data-constants/data-constants";
 import { techStack } from "./data-constants/data-constants";
-import { CiMenuFries } from "react-icons/ci";
 import * as Dialog from "@radix-ui/react-dialog"
 import { motion, AnimatePresence } from "motion/react"
 import { RiCloseLargeFill } from "react-icons/ri";
 import laptop from "./assets/laptopColorful.png"
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+
+
+
+
+
+
+
+// IMPROVIMENTS I NEED TO WORK ON FOR MOBILE
+// i need to make the hero section uniform in the mobile screen like the portfolios that i saw, i need to make sure only my name the nav and teck stack get shown in every screen hight size
+// improve the links style and position inside the dialog drawer
+// add social media icons, i think it is best to choose from the internet
+// improve the projects section, improve name and project descriptions
+// add background colors for some sections
+// make the nav bar follow the scroll
 
 
 function App() {
@@ -28,8 +42,8 @@ function App() {
 
   return (
     <>
-    <header>
-      <nav className="border1 px-8 h-20 flex max-sm:justify-end max-sm:items-center">
+    <header className="min-h-[100vh] flex flex-col justify-between">
+      <nav className="px-8 h-20 flex max-sm:justify-end max-sm:items-center sticky top-0 border1">
         {navList.map((links) => (
           <a 
           href="/"
@@ -39,9 +53,9 @@ function App() {
         ))}
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
-              <button className="sm:hidden text-4xl w-16 h-12 py-2 rounded-xl grid place-content-center shadow-[0px_3px_3px_rgba(0,0,0,0.55)]"
+              <button className="sm:hidden text-5xl rounded-xl grid place-content-center opacity-90"
               >
-                <CiMenuFries />
+                <HiOutlineMenuAlt4/>
               </button>
             </Dialog.Trigger>
             
@@ -125,24 +139,26 @@ function App() {
             <h2 className="text-3xl">Front-End Developer</h2>
           </div>
       </section >
+
+      <section>
+          <h2 className="text-center text-2xl font-medium mt-12 mb-4">Teck Stack</h2>
+          <div className="grid grid-cols-5 gap-4 justify-items-center px-3">
+            {techStack.map((tech) => (
+              <figure key={tech.name} className="border1 w-16 h-16 p-1 rounded-md bg-neutral-200">
+                <img
+                  src={tech.logo}
+                  alt="programming-logo"
+                  className="rounded-md w-full h-full object-fill"
+                />
+                <p className="max-sm:hidden">{tech.name}</p>
+              </figure>
+
+            ))}
+          </div>
+      </section>
     </header>
 
-    <main className="min-h-[100vh]">
-      
-      <h2 className="text-center text-2xl font-medium mt-12 mb-4">Teck Stack</h2>
-      <div className="grid grid-cols-5 gap-4 justify-items-center px-3">
-        {techStack.map((tech) => (
-          <figure key={tech.name} className="border1 w-16 h-16 p-1 rounded-md bg-neutral-200">
-            <img 
-            src={tech.logo} 
-            alt="programming-logo"
-            className="rounded-md w-full h-full object-fill"
-            />
-            <p className="max-sm:hidden">{tech.name}</p>
-          </figure>
-          
-        ))}
-      </div>
+    <main>
 
       <div className="max-sm:mt-16">
         <figure>
@@ -159,29 +175,27 @@ function App() {
 
         <section className="max-sm:flex max-sm:flex-col max-sm:items-center gap-4">
           <h2 className="text-2xl font-medium  max-sm:mt-16">Projects</h2>
-          <div>
-            <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md"></figure>
-            <h3 className="text-xl font-medium">Project Name</h3>
-            <p>Project Description</p>
-          </div>
-          <div>
-            <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md"></figure>
-            <h3 className="text-xl font-semibold">Project Name</h3>
-            <p>Project Description</p>
-          </div>
-          <div>
-            <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md"></figure>
-            <h3 className="text-xl font-semibold">Project Name</h3>
-            <p>Project Description</p>
-          </div>
-          <div>
-            <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md"></figure>
-            <h3 className="text-xl font-semibold">Project Name</h3>
-            <p>Project Description</p>
+          <div className="border1 flex flex-col items-center gap-4">
+            <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md bg-neutral-400">
+            </figure>
+            <h3 className="text-xl font-medium text-center">Simple Painting</h3>
+            <p className="text-center">Simple Painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+
+            <div className="flex gap-4">
+              <p>Tools</p>
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>Javascript</p>
+              <p>Typescript</p>
+            </div>
+
+            <div>
+              <p>Code:GITICON</p>
+            </div>
           </div>
         </section>
 
-        <section className="flex flex-col items-center bg-neutral-100 pb-12">
+        <section className="flex flex-col items-center pb-12">
           <h2 className="text-2xl font-semibold  max-sm:mt-16 max-sm:mb-4">Contact Form</h2>
           <form className="w-[80vw] rounded-md flex flex-col gap-4">
             <input 
