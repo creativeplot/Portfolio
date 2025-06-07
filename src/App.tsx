@@ -16,15 +16,6 @@ import { BsTwitterX } from "react-icons/bs";
 
 
 
-
-
-
-
-// IMPROVIMENTS I NEED TO WORK ON FOR MOBILE
-// improve the projects section, improve name and project descriptions
-// ajust the navBar background so it doesnt get transparent in some sections
-
-
 function App() {
 
   // removing scroll block from Dialog
@@ -41,14 +32,11 @@ function App() {
     }
   },[open])
 
-  // nav height is defined here to keep a proper size in hero section when nav moves together with the scroll
-  const navHeight = "16"
-
 
   return (
     <>
     <header className="max-sm:min-h-[100vh] flex flex-col justify-between">
-      <nav className={`px-2 h-${navHeight} w-full flex max-sm:justify-end max-sm:items-center bg-white fixed top-0`}>
+      <nav className="px-2 h-16 w-full flex max-sm:justify-end max-sm:items-center bg-white fixed top-0 z-30">
         {navList.map((links) => (
           <a 
           href="/"
@@ -174,8 +162,8 @@ function App() {
           </Dialog.Root>
       </nav>
 
-      <div className={`w-full h-${navHeight}`}>
-        {/* navUnderlayer */}
+      <div className="w-full h-16">
+        {/* navUnderlayer it keeps a proper size in hero section when nav moves together with the scroll */}
       </div>
 
       <section className="max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center">
@@ -205,7 +193,7 @@ function App() {
 
     <main>
 
-      <div className="max-sm:mt-20">
+      <div className="max-sm:mt-28">
         <figure>
           <img 
           src={laptop}
@@ -218,14 +206,14 @@ function App() {
           <p className="text-xl px-4 leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc</p>
         </div>
 
-        <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-20 gap-8">
+        <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-28 gap-8">
           <h2 className="text-2xl font-medium">Projects</h2>
           <div className="flex flex-col items-center gap-8">
             <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md bg-neutral-400">
             </figure>
             <div className="flex flex-col gap-4">
-            <h3 className="text-2xl font-medium">Simple Painting</h3>
-            <p className="text-xl max-sm:max-w-[90vw]">Simple Painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+            <h3 className="text-2xl font-semibold">Simple Painting</h3>
+            <p className="text-xl max-sm:max-w-[90vw]">Simple painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
             </div>
 
             <div className="flex flex-wrap max-sm:gap-2 text-xl w-full max-sm:max-w-[90vw]">
