@@ -8,7 +8,6 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import laptop from "./assets/laptopColorful.png"
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 
@@ -22,10 +21,7 @@ import { BsTwitterX } from "react-icons/bs";
 
 
 // IMPROVIMENTS I NEED TO WORK ON FOR MOBILE
-// improve the links style and position inside the dialog drawer
-// add social media icons, i think it is best to choose from the internet
 // improve the projects section, improve name and project descriptions
-// add background colors for some sections
 // ajust the navBar background so it doesnt get transparent in some sections
 
 
@@ -85,17 +81,17 @@ function App() {
                     <motion.div
                     className="fixed top-0 left-0 bg-white rounded shadow-2xl h-full"
                     initial={{
-                      width: '0vw',
-                      paddingLeft: '0',
+                      width: '0px',
+                      paddingLeft: '0px',
                       opacity: 0
                     }}
                     animate={{
-                      width: '60vw',
-                      paddingLeft: '20px',
+                      width: '270px',
+                      paddingLeft: '40px',
                       opacity: 1
                     }}
                     exit={{
-                      width: '0vw',
+                      width: '0px',
                       paddingLeft: '0px',
                       opacity: 0
                     }}
@@ -222,29 +218,32 @@ function App() {
           <p className="text-xl px-4 leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc</p>
         </div>
 
-        <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-20 gap-4">
+        <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-20 gap-8">
           <h2 className="text-2xl font-medium">Projects</h2>
-          <div className="flex flex-col items-center gap-4">
+          <div className="flex flex-col items-center gap-8">
             <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md bg-neutral-400">
             </figure>
-            <h3 className="text-xl font-medium text-center">Simple Painting</h3>
-            <p className="text-center max-sm:max-w-[90vw]">Simple Painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+            <div className="flex flex-col gap-4">
+            <h3 className="text-2xl font-medium">Simple Painting</h3>
+            <p className="text-xl max-sm:max-w-[90vw]">Simple Painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+            </div>
 
-            <div className="flex gap-4">
-              <p>Tools</p>
+            <div className="flex flex-wrap max-sm:gap-2 text-xl w-full max-sm:max-w-[90vw]">
+              <p className="font-semibold">Tools:</p>
               <p>HTML</p>
               <p>CSS</p>
               <p>Javascript</p>
               <p>Typescript</p>
             </div>
 
-            <div>
-              <p>Code:GITICON</p>
+            <div className="flex items-center gap-2 w-full">
+              <p className="text-xl font-semibold">Code</p>
+              <FaGithub className="text-2xl"/>
             </div>
           </div>
         </section>
 
-        <section className="flex flex-col items-center pb-12 mt-40">
+        <section className="flex flex-col items-center pb-12 mt-36">
           <h2 className="text-2xl font-semibold max-sm:mb-4">Contact Form</h2>
           <form className="w-[90vw] rounded-md flex flex-col gap-4">
             <input 
@@ -266,12 +265,15 @@ function App() {
               <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4">Send</button>
           </form>
 
-          <div className="w-full max-sm:max-w-[90vw] mt-20 flex flex-col gap-4">
+          <div className="w-full max-sm:max-w-[90vw] mt-20 flex flex-col gap-8">
             <h3 className="text-xl font-semibold">Quick Contact</h3>
-            <p>
-              <span className="font-semibold">Email:</span> Hey@example.com</p>
-            <p>
-              <span>Social:</span> linkding twitter</p>
+              <div className="flex gap-4 text-3xl">
+                <FaGithub/>
+                <FaLinkedin/>
+              </div>
+              <p className="text-lg">
+              <span className="font-semibold">Email:</span> Hey@example.com
+            </p>
           </div>
         </section>
       </div>
