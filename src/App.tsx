@@ -1,15 +1,15 @@
 import { useEffect, useState} from "react";
 import { navList } from "./data-constants/data-constants"
-import { socialMedia } from "./data-constants/data-constants";
 import { techStack } from "./data-constants/data-constants";
 import * as Dialog from "@radix-ui/react-dialog"
 import { motion, AnimatePresence } from "motion/react"
 import { RiCloseLargeFill } from "react-icons/ri";
-import laptop from "./assets/laptopColorful.png"
+import laptop from "./assets/photo-table-tv.jpeg"
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import heroImage from "./assets/manStyleSuite3-Photoroom.png"
 
 
 
@@ -36,14 +36,16 @@ function App() {
   return (
     <>
     <header className="max-sm:min-h-[100vh] flex flex-col justify-between">
-      <nav className="px-2 h-16 w-full flex max-sm:justify-end max-sm:items-center bg-white fixed top-0 z-30">
+      <nav className="px-2 h-16 w-full bg-white fixed top-0 z-30 flex max-sm:justify-end max-sm:items-center sm:justify-center">
+        <div className="max-sm:hidden min-w-[250px] w-full max-w-[1100px] flex justify-between items-center mx-8">
         {navList.map((links) => (
           <a 
           href="/"
           key={links}
-          className="border1 max-sm:hidden"
+          className="grid place-content-center font-light"
           >{links}</a>
         ))}
+        </div>
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild className="bg-white">
               <button className="sm:hidden text-5xl rounded-md grid place-content-center opacity-90 mr-[2vw]"
@@ -85,7 +87,7 @@ function App() {
                     }}
                     transition={{duration: 0.2, ease: 'easeInOut'}}
                     >
-                      <div className="mt-4 flex justify-end">
+                    <div className="mt-4 flex justify-end">
                       <Dialog.Close asChild>
                         <button className="px-4 py-2 text-2xl">
                           <RiCloseLargeFill/>
@@ -166,11 +168,21 @@ function App() {
         {/* navUnderlayer it keeps a proper size in hero section when nav moves together with the scroll */}
       </div>
 
-      <section className="max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center">
-          <div className="w-full flex flex-col items-center justify-center">
-            <h1 className="text-5xl font-semibold">Victor Souza</h1>
-            <h2 className="text-3xl">Front-End Developer</h2>
+      <section className="max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center h-[94vh] flex justify-center">
+          <div className="flex flex-col items-start justify-center w-full max-w-[540px] ml-10 max-sm:items-center">
+            <h1 className="text-5xl md:text-6xl lg:text-8xl font-semibold lg:whitespace-nowrap">Victor Souza</h1>
+            <h2 className="text-3xl md:text-4xl lg:text-6xl">Front-End Developer</h2>
           </div>
+          <div className="lg:w-[10vw] lg:max-w-20">
+            {/* hack to make a gap */}
+          </div>
+          <figure className="h-full w-full max-w-[610px] ">
+            <img 
+            src={heroImage} 
+            alt=""
+            className="h-full w-full object-cover object-top" 
+            />
+          </figure>
       </section >
 
       <section className="mb-2">
@@ -193,17 +205,19 @@ function App() {
 
     <main>
 
-      <div className="max-sm:mt-28">
-        <figure>
-          <img 
-          src={laptop}
-          alt=""
-          className="max-sm:hidden"/>
-        </figure>
+        <div className="max-sm:mt-28 sm:flex border1">
+            <figure className="max-sm:hidden w-[30rem] h-[30rem]">
+              <img
+                src={laptop}
+                alt="laptop-on-a-table"
+                className="" />
+            </figure>
 
-        <div>
-          <h2 className="text-center text-2xl font-medium mb-2">About/Journey</h2>
-          <p className="text-xl px-4 leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc</p>
+            <div className="px-4">
+              <h2 className="max-sm:text-center text-2xl font-medium mb-2">About/Journey</h2>
+              <p className="text-xl leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc
+              </p>
+            </div>
         </div>
 
         <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-28 gap-8">
@@ -264,7 +278,6 @@ function App() {
             </p>
           </div>
         </section>
-      </div>
 
     </main>
     <footer className="h-20 flex justify-center items-center text-xs">
