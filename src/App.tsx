@@ -12,7 +12,13 @@ import { BsTwitterX } from "react-icons/bs";
 import heroImage from "./assets/manStyleSuite3-Photoroom.png"
 
 
+// ajust the teck stack section, its width, decide where i am going to put the tools names, see what is better to use in the large screen 'grid' or 'flex-box', and if i left one line or two of programmin language
 
+// ajust about section margin top, ajust its image size and color then ajust its maximum width to match the width of the nav bar, the ajust the text in the section, ajust everything until it looks like the image the ia provided me with, add a learn more icon
+
+// ajust projects section, first make the image container appear in the big screen then ajust the text under it
+
+// dont forget the contact section the message container doesnt havew a proper height, then decide if i am going to keep it in the middle or in the sides
 
 
 
@@ -35,8 +41,8 @@ function App() {
 
   return (
     <>
-    <header className="max-sm:min-h-[100vh] flex flex-col justify-between">
-      <nav className="px-2 h-16 w-full bg-white fixed top-0 z-30 flex max-sm:justify-end max-sm:items-center sm:justify-center">
+    <header className="max-md:min-h-[100vh] flex flex-col justify-between">
+      <nav className="max-sm:px-2 h-16 w-full bg-white fixed top-0 z-30 flex max-sm:justify-end max-sm:items-center sm:justify-center">
         <div className="max-sm:hidden min-w-[250px] w-full max-w-[1100px] flex justify-between items-center mx-8">
         {navList.map((links) => (
           <a 
@@ -168,15 +174,15 @@ function App() {
         {/* navUnderlayer it keeps a proper size in hero section when nav moves together with the scroll */}
       </div>
 
-      <section className="max-sm:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center h-[94vh] flex justify-center">
-          <div className="flex flex-col items-start justify-center w-full max-w-[540px] ml-10 max-sm:items-center">
+      <section className="max-md:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center md:h-[100vh] flex justify-center">
+          <div className="flex flex-col max-md:items-center justify-center w-full md:max-w-[540px] md:ml-8 max-sm:items-center">
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-semibold lg:whitespace-nowrap">Victor Souza</h1>
             <h2 className="text-3xl md:text-4xl lg:text-6xl">Front-End Developer</h2>
           </div>
           <div className="lg:w-[10vw] lg:max-w-20">
             {/* hack to make a gap */}
           </div>
-          <figure className="h-full w-full max-w-[610px] ">
+          <figure className="h-full w-full max-w-[610px] max-md:hidden">
             <img 
             src={heroImage} 
             alt=""
@@ -185,18 +191,20 @@ function App() {
           </figure>
       </section >
 
-      <section className="mb-2">
-          <h2 className="text-center text-2xl font-medium mt-20 mb-4">Teck Stack</h2>
-          <div className="grid grid-cols-5 gap-4 justify-items-center px-3">
+      <section className="mb-2 flex flex-col items-center">
+          <h2 className="text-center text-2xl font-medium mt-20 mb-4 md:mt-28">Teck Stack</h2>
+          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-between">
             {techStack.map((tech) => (
-              <figure key={tech.name} className="border1 w-16 h-16 p-1 rounded-md bg-neutral-200">
+              <div className="border1 flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1">
+              <figure key={tech.name} className="border1 w-16 h-16 lg:w-20 lg:h-20 p-1 rounded-md bg-neutral-200">
                 <img
                   src={tech.logo}
                   alt="programming-logo"
                   className="rounded-md w-full h-full object-fill"
                 />
-                <p className="max-sm:hidden">{tech.name}</p>
               </figure>
+              <p className="max-md:hidden text-lg font-semibold">{tech.name}</p>
+              </div>
 
             ))}
           </div>
@@ -205,7 +213,7 @@ function App() {
 
     <main>
 
-        <div className="max-sm:mt-28 sm:flex border1">
+        <div className="max-sm:mt-28 sm:flex border1 sm:mt-48">
             <figure className="max-sm:hidden w-[30rem] h-[30rem]">
               <img
                 src={laptop}

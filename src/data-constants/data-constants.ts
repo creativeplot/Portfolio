@@ -26,7 +26,7 @@ export const techStack = [
     },
     {
         logo: tailwindLogo,
-        name: "Tailwindcss"
+        name: "Tailwind"
     },
     {
         logo: reduxLogo,
