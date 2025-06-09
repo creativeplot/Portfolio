@@ -17,24 +17,24 @@ export const techStack = [
         name: "Javascript"
     },
     {
-        logo: typescriptLogo,
-        name: "Typescript"
-    },
-    {
         logo: reactLogo,
         name: "React"
-    },
-    {
-        logo: tailwindLogo,
-        name: "Tailwind"
     },
     {
         logo: reduxLogo,
         name: "Redux"
     },
     {
+        logo: tailwindLogo,
+        name: "Tailwind"
+    },
+    {
         logo: nextLogo,
         name: "NextJS"
+    },
+    {
+        logo: typescriptLogo,
+        name: "Typescript"
     },
     {
         logo: gitLogo,

@@ -195,7 +195,7 @@ function App() {
           <h2 className="text-center text-2xl font-medium mt-20 mb-4 md:mt-28">Teck Stack</h2>
           <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-between">
             {techStack.map((tech) => (
-              <div className="border1 flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1">
+              <div className="flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1">
               <figure key={tech.name} className="border1 w-16 h-16 lg:w-20 lg:h-20 p-1 rounded-md bg-neutral-200">
                 <img
                   src={tech.logo}
@@ -203,7 +203,7 @@ function App() {
                   className="rounded-md w-full h-full object-fill"
                 />
               </figure>
-              <p className="max-md:hidden text-lg font-semibold">{tech.name}</p>
+              <p className="max-md:hidden text-normal">{tech.name}</p>
               </div>
 
             ))}
