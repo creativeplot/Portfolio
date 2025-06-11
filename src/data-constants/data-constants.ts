@@ -1,7 +1,7 @@
 import { htmlLogo, cssLogo, javascriptLogo, typescriptLogo, reactLogo, tailwindLogo, reduxLogo, nextLogo, gitLogo, gitHubLogo } from "../ultis"
 
 
-export const navList = ['HOME','ABOUT','PROJECTS','CONTACT','RESUME']
+export const navList = ['Home','About','Projects','Contact','Resume']
 
 export const techStack = [
     {

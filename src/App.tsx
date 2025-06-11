@@ -10,16 +10,10 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import heroImage from "./assets/manStyleSuite3-Photoroom.png"
+import projectImgTest from "./assets/web-design-1.png"
+import projectImgTest2 from "./assets/websiteExample.png"
 
-
-// ajust the teck stack section, its width, decide where i am going to put the tools names, see what is better to use in the large screen 'grid' or 'flex-box', and if i left one line or two of programmin language
-
-// ajust about section margin top, ajust its image size and color then ajust its maximum width to match the width of the nav bar, the ajust the text in the section, ajust everything until it looks like the image the ia provided me with, add a learn more icon
-
-// ajust projects section, first make the image container appear in the big screen then ajust the text under it
-
-// dont forget the contact section the message container doesnt havew a proper height, then decide if i am going to keep it in the middle or in the sides
-
+// next step is to add a layer to all images so it has a black and white look to it, then i want to animate this layer so it show the images color every time i hover over the image with my mouse
 
 
 function App() {
@@ -31,6 +25,8 @@ function App() {
 
     if(open) {
       document.body.style.overflow = 'auto';
+    } else {
+      document.body.style.overflow = '';
     }
 
     return () => {
@@ -42,8 +38,8 @@ function App() {
   return (
     <>
     <header className="max-md:min-h-[100vh] flex flex-col justify-between">
-      <nav className="max-sm:px-2 h-16 w-full bg-white fixed top-0 z-30 flex max-sm:justify-end max-sm:items-center sm:justify-center">
-        <div className="max-sm:hidden min-w-[250px] w-full max-w-[1100px] flex justify-between items-center mx-8">
+      <nav className="max-md:px-2 h-16 w-full bg-white fixed top-0 z-30 flex max-md:justify-end max-md:items-center md:justify-center">
+        <div className="max-md:hidden min-w-[250px] w-full max-w-[1100px] flex justify-between items-center mx-8">
         {navList.map((links) => (
           <a 
           href="/"
@@ -54,7 +50,7 @@ function App() {
         </div>
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild className="bg-white">
-              <button className="sm:hidden text-5xl rounded-md grid place-content-center opacity-90 mr-[2vw]"
+              <button className="md:hidden text-5xl rounded-md grid place-content-center opacity-90 mr-[2vw]"
               >
                 <HiOutlineMenuAlt4 className="text-neutral-700"/>
               </button>
@@ -193,10 +189,10 @@ function App() {
 
       <section className="mb-2 flex flex-col items-center">
           <h2 className="text-center text-2xl font-medium mt-20 mb-4 md:mt-28">Teck Stack</h2>
-          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-betweenssssssssssssssss">
+          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-between">
             {techStack.map((tech) => (
-              <div className="flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1">
-              <figure key={tech.name} className="border1 w-16 h-16 lg:w-20 lg:h-20 p-1 rounded-md bg-neutral-200">
+              <div className="flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1 hover:font-semibold filter grayscale hover:grayscale-0">
+              <figure key={tech.name} className="w-16 h-16 lg:w-20 lg:h-20 p-1 rounded-md bg-neutral-200">
                 <img
                   src={tech.logo}
                   alt="programming-logo"
@@ -219,7 +215,7 @@ function App() {
               <img
                 src={laptop}
                 alt="laptop-on-a-table"
-                className="h-full object-cover"/>
+                className="h-full object-cover rounded-md filter grayscale hover:grayscale-0"/>
             </figure>
 
             <div className="px-4 max-w-[750px]">
@@ -234,14 +230,15 @@ function App() {
           <h2 className="text-2xl font-medium md:text-center">Projects</h2>
           <div className="w-full max-w-[1200px] md:flex md:gap-8">
             <div className="flex flex-col items-center gap-8 md:w-[50vw]">
-              <figure className="max-md:w-[90vw] max-md:h-[40vh] md:w-full md:h-[40vh] rounded-md bg-neutral-400">
+              <figure className="max-md:w-[90vw] max-md:h-[40vh] md:w-full md:h-[40vh] rounded-md bg-neutral-400 ">
+                <img src={projectImgTest} alt="test" className="w-full h-full object-cover filter grayscale hover:grayscale-0" />
               </figure>
               <div className="flex flex-col gap-4 w-full">
                 <h3 className="text-2xl font-semibold">Simple Painting</h3>
                 <p className="text-xl max-sm:max-w-[90vw]">Simple painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
               </div>
 
-              <div className="flex flex-wrap max-sm:gap-2 text-xl w-full max-sm:max-w-[90vw]">
+              <div className="flex flex-wrap gap-2 text-xl w-full max-sm:max-w-[90vw]">
                 <p className="font-semibold">Tools:</p>
                 <p>HTML</p>
                 <p>CSS</p>
@@ -257,6 +254,7 @@ function App() {
 
             <div className="flex flex-col items-center gap-8 md:w-[50vw]">
               <figure className="max-md:w-[90vw] max-md:h-[40vh] md:w-full md:h-[40vh] rounded-md bg-neutral-400">
+                <img src={projectImgTest2} alt="test" className="w-full h-full object-cover filter grayscale" />
               </figure>
               <div className="flex flex-col gap-4 w-full">
                 <h3 className="text-2xl font-semibold">Simple Painting</h3>
@@ -280,7 +278,7 @@ function App() {
           </div>
         </section>
 
-        <section className="pb-12 max-sm:mt-36 sm:mt-48 md:flex md:justify-center">
+        <section className="pb-32 max-sm:mt-36 sm:mt-48 md:flex md:justify-center">
           <div className="flex max-md:flex-col items-center w-full max-w-[1200px]">
           <form className="w-full rounded-md flex flex-col gap-4">
             <h2 className="text-2xl font-semibold max-sm:mb-4">Contact Form</h2>
@@ -298,13 +296,13 @@ function App() {
               name="message"
               id="message"
               placeholder="Message"
-              className="max-sm:max-w-[90vw] max-sm:h-[16vh] text-lg outline-none resize-none borderFormFilds bg-transparent mt-4"
+              className="max-sm:max-w-[90vw] h-[16vh] text-lg outline-none resize-none borderFormFilds bg-transparent mt-4"
               ></textarea>
-              <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4">Send</button>
+              <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4 hover:bg-orange-500 hover:text-black">Send</button>
           </form>
 
-          <div className="w-full max-md:mt-20 flex flex-col max-w-[1200px] md:h-full gap-8 md:items-center">
-            <h3 className="text-xl font-semibold">Quick Contact</h3>
+          <div className="w-full max-md:mt-20 flex flex-col max-w-[1200px] md:h-full gap-10 md:items-center">
+            <h3 className="text-xl md:text-2xl font-semibold">Quick Contact</h3>
               <div className="flex gap-4 text-3xl">
                 <FaGithub/>
                 <FaLinkedin/>
@@ -317,7 +315,7 @@ function App() {
         </section>
 
     </main>
-    <footer className="h-20 flex justify-center items-center text-xs">
+    <footer className="h-16 flex justify-center items-center text-xs">
       <p>&copy; 2025 VICTORSOUZA. ALL RIGHT RESERVED</p>
     </footer>
     </>
