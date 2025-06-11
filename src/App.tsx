@@ -193,7 +193,7 @@ function App() {
 
       <section className="mb-2 flex flex-col items-center">
           <h2 className="text-center text-2xl font-medium mt-20 mb-4 md:mt-28">Teck Stack</h2>
-          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-between">
+          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-betweenssssssssssssssss">
             {techStack.map((tech) => (
               <div className="flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1">
               <figure key={tech.name} className="border1 w-16 h-16 lg:w-20 lg:h-20 p-1 rounded-md bg-neutral-200">
@@ -211,51 +211,79 @@ function App() {
       </section>
     </header>
 
-    <main>
+    <main className="mx-8">
 
-        <div className="max-sm:mt-28 sm:flex border1 sm:mt-48">
-            <figure className="max-sm:hidden w-[30rem] h-[30rem]">
+        <div className="w-full max-sm:mt-28 sm:mt-48 sm:flex sm:justify-center">
+          <div className="lg:max-w-[1200px] sm:flex gap-4">
+            <figure className="max-md:hidden w-full min-w-[300px] flex-grow">
               <img
                 src={laptop}
                 alt="laptop-on-a-table"
-                className="" />
+                className="h-full object-cover"/>
             </figure>
 
-            <div className="px-4">
-              <h2 className="max-sm:text-center text-2xl font-medium mb-2">About/Journey</h2>
-              <p className="text-xl leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc
+            <div className="px-4 max-w-[750px]">
+              <h2 className="max-md:text-center text-2xl font-medium mb-2">About/Journey</h2>
+              <p className="text-xl leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc <a href="/" className="font-semibold">know more</a>
               </p>
             </div>
+          </div>
         </div>
 
-        <section className="max-sm:flex max-sm:flex-col max-sm:items-center mt-28 gap-8">
-          <h2 className="text-2xl font-medium">Projects</h2>
-          <div className="flex flex-col items-center gap-8">
-            <figure className="border1 max-sm:w-[90vw] max-sm:h-[40vh] rounded-md bg-neutral-400">
-            </figure>
-            <div className="flex flex-col gap-4">
-            <h3 className="text-2xl font-semibold">Simple Painting</h3>
-            <p className="text-xl max-sm:max-w-[90vw]">Simple painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+        <section className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:mt-28 sm:mt-48 gap-8 flex flex-col justify-center items-center">
+          <h2 className="text-2xl font-medium md:text-center">Projects</h2>
+          <div className="w-full max-w-[1200px] md:flex md:gap-8">
+            <div className="flex flex-col items-center gap-8 md:w-[50vw]">
+              <figure className="max-md:w-[90vw] max-md:h-[40vh] md:w-full md:h-[40vh] rounded-md bg-neutral-400">
+              </figure>
+              <div className="flex flex-col gap-4 w-full">
+                <h3 className="text-2xl font-semibold">Simple Painting</h3>
+                <p className="text-xl max-sm:max-w-[90vw]">Simple painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+              </div>
+
+              <div className="flex flex-wrap max-sm:gap-2 text-xl w-full max-sm:max-w-[90vw]">
+                <p className="font-semibold">Tools:</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>Javascript</p>
+                <p>Typescript</p>
+              </div>
+
+              <div className="flex items-center gap-2 w-full">
+                <p className="text-xl font-semibold">Code</p>
+                <FaGithub className="text-2xl" />
+              </div>
             </div>
 
-            <div className="flex flex-wrap max-sm:gap-2 text-xl w-full max-sm:max-w-[90vw]">
-              <p className="font-semibold">Tools:</p>
-              <p>HTML</p>
-              <p>CSS</p>
-              <p>Javascript</p>
-              <p>Typescript</p>
+            <div className="flex flex-col items-center gap-8 md:w-[50vw]">
+              <figure className="max-md:w-[90vw] max-md:h-[40vh] md:w-full md:h-[40vh] rounded-md bg-neutral-400">
+              </figure>
+              <div className="flex flex-col gap-4 w-full">
+                <h3 className="text-2xl font-semibold">Simple Painting</h3>
+                <p className="text-xl max-sm:max-w-[90vw]">Simple painting is an app that turns the process of painting more fast and intuitive because of its keyboard and mouse intregration</p>
+              </div>
+
+              <div className="flex flex-wrap max-sm:gap-2 text-xl w-full max-sm:max-w-[90vw]">
+                <p className="font-semibold">Tools:</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <p>Javascript</p>
+                <p>Typescript</p>
+              </div>
+
+              <div className="flex items-center gap-2 w-full">
+                <p className="text-xl font-semibold">Code</p>
+                <FaGithub className="text-2xl" />
+              </div>
             </div>
 
-            <div className="flex items-center gap-2 w-full">
-              <p className="text-xl font-semibold">Code</p>
-              <FaGithub className="text-2xl"/>
-            </div>
           </div>
         </section>
 
-        <section className="flex flex-col items-center pb-12 mt-36">
-          <h2 className="text-2xl font-semibold max-sm:mb-4">Contact Form</h2>
-          <form className="w-[90vw] rounded-md flex flex-col gap-4">
+        <section className="pb-12 max-sm:mt-36 sm:mt-48 md:flex md:justify-center">
+          <div className="flex max-md:flex-col items-center w-full max-w-[1200px]">
+          <form className="w-full rounded-md flex flex-col gap-4">
+            <h2 className="text-2xl font-semibold max-sm:mb-4">Contact Form</h2>
             <input 
               type="text"
               placeholder="Name"
@@ -275,7 +303,7 @@ function App() {
               <button className="bg-black text-white rounded-md max-w-16 h-8 text-lg mt-4">Send</button>
           </form>
 
-          <div className="w-full max-sm:max-w-[90vw] mt-20 flex flex-col gap-8">
+          <div className="w-full max-md:mt-20 flex flex-col max-w-[1200px] md:h-full gap-8 md:items-center">
             <h3 className="text-xl font-semibold">Quick Contact</h3>
               <div className="flex gap-4 text-3xl">
                 <FaGithub/>
@@ -284,6 +312,7 @@ function App() {
               <p className="text-lg">
               <span className="font-semibold">Email:</span> Hey@example.com
             </p>
+          </div>
           </div>
         </section>
 
