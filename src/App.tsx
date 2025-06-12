@@ -15,6 +15,8 @@ import projectImgTest2 from "./assets/websiteExample.png"
 
 // next step is to add a layer to all images so it has a black and white look to it, then i want to animate this layer so it show the images color every time i hover over the image with my mouse
 
+// ajust the icons properly
+
 
 function App() {
 
@@ -44,7 +46,7 @@ function App() {
           <a 
           href="/"
           key={links}
-          className="grid place-content-center font-light"
+          className="grid place-content-center opacity-70 hover:opacity-100"
           >{links}</a>
         ))}
         </div>
@@ -118,7 +120,7 @@ function App() {
                         <a 
                         href="/" 
                         key={link}
-                        className=""
+                        className="max-md:uppercase"
                         >{link}</a>
                       ))}
                     </motion.div>
@@ -166,10 +168,9 @@ function App() {
           </Dialog.Root>
       </nav>
 
-      <div className="w-full h-16">
+      <div className="md:hidden w-full h-16">
         {/* navUnderlayer it keeps a proper size in hero section when nav moves together with the scroll */}
       </div>
-
       <section className="max-md:flex-grow w-full bg-neutral-100 max-sm:flex max-sm:items-center md:h-[100vh] flex justify-center">
           <div className="flex flex-col max-md:items-center justify-center w-full md:max-w-[540px] md:ml-8 max-sm:items-center">
             <h1 className="text-5xl md:text-6xl lg:text-8xl font-semibold lg:whitespace-nowrap">Victor Souza</h1>
@@ -187,16 +188,16 @@ function App() {
           </figure>
       </section >
 
-      <section className="mb-2 flex flex-col items-center">
-          <h2 className="text-center text-2xl font-medium mt-20 mb-4 md:mt-28">Teck Stack</h2>
-          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[900px] md:flex md:justify-around lg:justify-between">
+      <section className="flex flex-col items-center max-md:mt-20 md:mt-40">
+          <h2 className="text-center text-2xl font-medium mb-4 lg:mb-8">Teck Stack</h2>
+          <div className="grid grid-cols-5 max-md:gap-4 justify-items-center max-lg:px-3 min-w-[250px] w-full lg:max-w-[1200px] md:flex md:justify-around lg:justify-between">
             {techStack.map((tech) => (
               <div className="flex flex-col items-center justify-center w-16 lg:w-20 gap-y-1 hover:font-semibold filter grayscale hover:grayscale-0">
               <figure key={tech.name} className="w-16 h-16 lg:w-20 lg:h-20 p-1 rounded-md bg-neutral-200">
                 <img
                   src={tech.logo}
                   alt="programming-logo"
-                  className="rounded-md w-full h-full object-fill"
+                  className="rounded-md w-full h-full object-scale-down "
                 />
               </figure>
               <p className="max-md:hidden text-normal">{tech.name}</p>
@@ -209,7 +210,7 @@ function App() {
 
     <main className="mx-8">
 
-        <div className="w-full max-sm:mt-28 sm:mt-48 sm:flex sm:justify-center">
+        <div className="w-full max-md:mt-28 md:mt-64 sm:flex sm:justify-center">
           <div className="lg:max-w-[1200px] sm:flex gap-4">
             <figure className="max-md:hidden w-full min-w-[300px] flex-grow">
               <img
@@ -218,7 +219,7 @@ function App() {
                 className="h-full object-cover rounded-md filter grayscale hover:grayscale-0"/>
             </figure>
 
-            <div className="px-4 max-w-[750px]">
+            <div className="px-4 max-w-[700px]">
               <h2 className="max-md:text-center text-2xl font-medium mb-2">About/Journey</h2>
               <p className="text-xl leading-8 opacity-80">I'm a self-taught web developer and Mobile App Developer with experience in designing new features from ideation to production, implementation of wireframes and design flows into high performance software applications. I take into consideration the user experience while writing reusable and efficient code. I passionately combine good design, technology, and innovation in all my projects, which I like to accompany from the first idea to release. Currently, I'm focused on the backend development.  i Actually can talk about my journey of becoming a self tought developer how i learned inglish end etc <a href="/" className="font-semibold">know more</a>
               </p>
@@ -226,12 +227,12 @@ function App() {
           </div>
         </div>
 
-        <section className="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:mt-28 sm:mt-48 gap-8 flex flex-col justify-center items-center">
+        <section className="max-sm:flex max-md:flex-col max-sm:items-center max-md:mt-28 md:mt-64 gap-8 flex flex-col justify-center items-center">
           <h2 className="text-2xl font-medium md:text-center">Projects</h2>
           <div className="w-full max-w-[1200px] md:flex md:gap-8">
             <div className="flex flex-col items-center gap-8 md:w-[50vw]">
               <figure className="max-md:w-[90vw] max-md:h-[40vh] md:w-full md:h-[40vh] rounded-md bg-neutral-400 ">
-                <img src={projectImgTest} alt="test" className="w-full h-full object-cover filter grayscale hover:grayscale-0" />
+                <img src={projectImgTest} alt="test" className="w-full h-full object-cover rounded-md filter grayscale hover:grayscale-0" />
               </figure>
               <div className="flex flex-col gap-4 w-full">
                 <h3 className="text-2xl font-semibold">Simple Painting</h3>
@@ -278,7 +279,7 @@ function App() {
           </div>
         </section>
 
-        <section className="pb-32 max-sm:mt-36 sm:mt-48 md:flex md:justify-center">
+        <section className="pb-32 max-md:mt-36 md:mt-64 md:flex md:justify-center">
           <div className="flex max-md:flex-col items-center w-full max-w-[1200px]">
           <form className="w-full rounded-md flex flex-col gap-4">
             <h2 className="text-2xl font-semibold max-sm:mb-4">Contact Form</h2>
